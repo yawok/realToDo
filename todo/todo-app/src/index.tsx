@@ -5,12 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import UnknownPath from './components/errors/UnknownPath';
+import NewTask from './components/NewTask';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <UnknownPath />
+    errorElement: <UnknownPath />,
+    children: [
+      {
+        path: "new",
+        element: <NewTask />
+      }
+    ]
   }
 ]);
 
