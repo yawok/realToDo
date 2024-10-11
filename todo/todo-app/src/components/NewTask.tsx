@@ -5,23 +5,23 @@ export interface Task {
   title: string;
   description: string;
   isDone: boolean;
-  startDate: number;
-  deadline: number | null;
+  startDate: Date;
+  deadline: Date | null;
 }
 
 function NewTask() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [startDate, setStartDate] = useState(0);
-  const [deadline, setDeadline] = useState(null);
+  const [startDate, setStartDate] = useState("2024-10-10");
+  const [deadline, setDeadline] = useState("");
 
   const saveTask = () : void => {
     const newTask : Task = {
       title : title,
       description : description,
       isDone : false,
-      startDate : startDate,
-      deadline : deadline
+      startDate : new Date(startDate),
+      deadline : new Date (deadline)
     };
 
     // TODO: write code to save
