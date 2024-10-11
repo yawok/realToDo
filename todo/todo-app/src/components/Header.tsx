@@ -9,7 +9,7 @@ function Header() {
 					<Navbar.Brand href="/" >ToDo</Navbar.Brand>
 					<Nav className="me-auto">
 						<Nav.Link href="/new">Add</Nav.Link>
-						<Nav.Link href="/all">View All</Nav.Link>
+						<Nav.Link href="/all">All Tasks</Nav.Link>
 					</Nav>
 				</Container>
 			</Navbar>

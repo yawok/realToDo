@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import UnknownPath from './components/errors/UnknownPath';
 import NewTask from './components/NewTask';
+import Tasks from './components/Tasks';
+import { getAllTasks, getLiveTasks } from './services/dbService';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +16,18 @@ const router = createBrowserRouter([
     errorElement: <UnknownPath />,
     children: [
       {
+        path: "/",
+        element: <Tasks pageTitle={"All live tasks"} />,
+        loader: getLiveTasks
+      },
+      {
         path: "new",
         element: <NewTask />
+      },
+      {
+        path: "all",
+        element: <Tasks pageTitle={"All tasks"} />,
+        loader: getAllTasks
       }
     ]
   }
