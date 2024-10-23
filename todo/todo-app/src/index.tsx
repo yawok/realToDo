@@ -17,8 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Tasks pageTitle={"All live tasks"} />,
-        loader: getLiveTasks
+        element: <Tasks pageTitle={"All live tasks"} getFunction={getLiveTasks} />,
       },
       {
         path: "new",
@@ -26,8 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "all",
-        element: <Tasks pageTitle={"All tasks"} />,
-        loader: getAllTasks
+        element: <Tasks pageTitle={"All tasks"} getFunction={getAllTasks} />,
       }
     ]
   }

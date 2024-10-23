@@ -53,7 +53,6 @@ export async function updateTask(task: Task) {
 		.catch(() => console.log("Update failed"));
 }
 
-
 function taskSortFunction(a: Task, b: Task) {
 	if (a.deadline >= b.deadline) {
 		return 1;
